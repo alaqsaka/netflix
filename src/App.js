@@ -8,7 +8,44 @@ import { Home, Browse, Signin, Signup } from "./pages";
 export default function App() {
   return (
     <Router>
-      <Home />
+      <Routes>
+        <Route
+          exact
+          path="/browse"
+          element={
+            <>
+              <Browse />
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/signup"
+          element={
+            <>
+              <Signup />
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/signin"
+          element={
+            <>
+              <Signin />
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+              <Home />
+            </>
+          }
+        />
+      </Routes>
     </Router>
   );
 }
