@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HeaderContainer } from "../containers/header";
 import { JumbotronContainer } from "../containers/jumbotron";
 import { FaqsContainer } from "../containers/faqs";
 import { FooterContainer } from "../containers/footer";
@@ -14,9 +15,11 @@ export default function Home() {
           path={ROUTES.HOME}
           element={
             <>
-              <JumbotronContainer />
-              <FaqsContainer />
-              <FooterContainer />
+              <HeaderContainer>
+                <JumbotronContainer />
+                <FaqsContainer />
+                <FooterContainer />
+              </HeaderContainer>
             </>
           }
         ></Route>
