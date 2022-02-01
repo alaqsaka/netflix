@@ -3,6 +3,7 @@ import App from "./app";
 import reportWebVitals from "./reportWebVitals";
 import "normalize.css";
 import { GlobalStyles } from "./global-styles";
+import { firebase } from "./lib/firebase.prod";
 
 render(
   <>
