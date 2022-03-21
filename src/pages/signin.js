@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { FirebaseContext } from "../context/firebase";
 import { HeaderContainer } from "../containers/header";
+import { useNavigate } from "react-router-dom";
+// useHistory (older version using useHistory, newer version using usingNavigate) allows us to push to different page
 import { FooterContainer } from "../containers/footer";
 import { SigninForm } from "../containers/siginform";
 import { Form } from "../components";
+import * as ROUTES from "../constants/routes";
 
 export default function Signin() {
+  const history = useNavigate();
+  const { firebase } = useContext(FirebaseContext);
+
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,6 +23,18 @@ export default function Signin() {
     event.preventDefault();
 
     //firebase here
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(emailAddress, password)
+      .then(() => {
+        // push to the browse page
+        history.push(ROUTES.BROWSE);
+      })
+      .catch((error) => {
+        setEmailAddress("");
+        setPassword("");
+        setError(error.message);
+      });
   };
 
   return (

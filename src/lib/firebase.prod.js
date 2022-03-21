@@ -4,12 +4,12 @@ import "firebase/compat/auth";
 
 // Config here
 const config = {
-  apiKey: "AIzaSyABjBsTAhMpxlxQU6sf88mbvugkzYF0DEE",
-  authDomain: "neflix-8e3d0.firebaseapp.com",
-  projectId: "neflix-8e3d0",
-  storageBucket: "neflix-8e3d0.appspot.com",
-  messagingSenderId: "996005280208",
-  appId: "1:996005280208:web:02cba2c4d8459d73f4e1d5",
+  apiKey: "AIzaSyDG-aGN84zBWeyr0UolTng-P3HI6SFNt1c",
+  authDomain: "netflix-app-react-ed0ab.firebaseapp.com",
+  projectId: "netflix-app-react-ed0ab",
+  storageBucket: "netflix-app-react-ed0ab.appspot.com",
+  messagingSenderId: "763839652269",
+  appId: "1:763839652269:web:6f4932c6432faaa056c124",
 };
 
 const firebase = Firebase.initializeApp(config);
